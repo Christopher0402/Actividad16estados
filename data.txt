@@ -1,0 +1,7 @@
+ID,Estado,Temperatura,Humedad,Costo_Alojamiento,Costo_Transporte,Dias_Promedio,Tiempo_Traslado,clima
+1,Aguascalientes,24,45,900,500,3,4, el clima esta soleado
+2,Baja California,28,40,1200,1500,5,24, el clima esta lluvioso
+3,Baja California Sur,30,50,1800,2000,5,28, el clima esta tormentoso
+4,Campeche,29,70,1100,1300,4,12, el clima esta nublado
+5,Chiapas,26,80,800,1200,5,14, el clima esta caluroso
+6,Chihuahua,22,35,950,1400,4,10, el clima esta nevado

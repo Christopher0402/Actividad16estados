@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Estados - AWS Pipeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            color: #232f3e;
+            /* Color representativo de AWS */
+        }
+
+        /* El estilo que pediste */
+        #contenido {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+            /* Mantiene el formato de texto pero permite saltos de línea */
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Resultados del Pipeline de Datos</h1>
+    <p>Los siguientes datos fueron procesados en una instancia EC2 y desplegados automáticamente:</p>
+
+    <pre id="contenido">Cargando datos desde el servidor...</pre>
+
+    <script>
+        // Esta función busca el archivo 'resultado.txt' en el mismo nivel que el index.html
+        fetch('resultado.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('El archivo resultado.txt aún no está disponible.');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Insertamos el texto procesado en el cuadro gris
+                document.getElementById('contenido').innerText = data;
+            })
+            .catch(error => {
+                document.getElementById('contenido').innerText = "Error: " + error.message;
+                console.error('Hubo un problema con la petición fetch:', error);
+            });
+    </script>
+
+</body>
+
+</html>

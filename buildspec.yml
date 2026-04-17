@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - echo "Validando el script en el entorno de Build..."
+      - python3 process_data.py
+artifacts:
+  files:
+    - '**/*' # Esto envía TODOS los archivos a la siguiente etapa (Deploy)
